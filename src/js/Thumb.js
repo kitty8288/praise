@@ -1,18 +1,5 @@
-import PraiseButton from './PraiseButton'
+import Thumb from 'index.js'
 
-class Thumb extends PraiseButton {
-    showPraiseText() {
-        this.drawPraiseText()
-        this.praiseText.classList.add("text-show");
-        setTimeout(() => {
-            this.hidePraiseText()
-        }, 500);
-    }
-
-    hidePraiseText() {
-        this.praiseText.classList.remove("text-show");
-    }
-}
-
-let run = new Thumb()
-run.showPraiseText();
+// 实例化
+let run = new Thumb(0, $('#thumb'));
+run.clickAction();

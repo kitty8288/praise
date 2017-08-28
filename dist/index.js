@@ -66,23 +66,32 @@
     }();
 
     var PraiseButton = function () {
-        function PraiseButton() {
+        function PraiseButton(num, element) {
             _classCallCheck(this, PraiseButton);
 
-            this.showPraiseText = this.showPraiseText.bind(this);
-            this.praiseText = null;
-            this.praiseHand = null;
-            this.count = 0;
+            this.num = num;
+            this.element = element;
         }
 
         _createClass(PraiseButton, [{
-            key: 'drawPraiseText',
-            value: function drawPraiseText() {
-                this.praiseHand = document.getElementById('hand');
-                this.praiseText = document.getElementById('praise-text');
-                this.praiseText.innerText = '+1';
-                this.praiseHand.onclick = this.showPraiseText;
-                this.count++;
+            key: 'clickAction',
+            value: function clickAction() {
+                var _this = this;
+
+                this.element.click(function () {
+                    if (_this.num < 10) {
+                        _this.element.css('-webkit-filter', 'grayscale(0)');
+                        $('#animation').addClass('num');
+                        _this.num++;
+                        setTimeout(function () {
+                            $('#animation').removeClass('num');
+                        }, 1000);
+                    } else {
+                        _this.element.css('-webkit-filter', 'grayscale(1)');
+                        _this.num = 0;
+                    }
+                    console.log(_this.num);
+                });
             }
         }]);
 
@@ -92,36 +101,21 @@
     var Thumb = function (_PraiseButton) {
         _inherits(Thumb, _PraiseButton);
 
-        function Thumb() {
+        function Thumb(num, element) {
             _classCallCheck(this, Thumb);
 
-            return _possibleConstructorReturn(this, (Thumb.__proto__ || Object.getPrototypeOf(Thumb)).apply(this, arguments));
+            return _possibleConstructorReturn(this, (Thumb.__proto__ || Object.getPrototypeOf(Thumb)).call(this, num, element));
         }
-
-        _createClass(Thumb, [{
-            key: 'showPraiseText',
-            value: function showPraiseText() {
-                var _this2 = this;
-
-                this.drawPraiseText();
-                this.praiseText.classList.add("text-show");
-                if (this.count === 11) {
-                    var handDiv = document.getElementById('hand');
-                    handDiv.style.backgroundColor = "#c7c4c4";
-                }
-                setTimeout(function () {
-                    _this2.hidePraiseText();
-                }, 500);
-            }
-        }, {
-            key: 'hidePraiseText',
-            value: function hidePraiseText() {
-                this.praiseText.classList.remove("text-show");
-            }
-        }]);
 
         return Thumb;
     }(PraiseButton);
 
-    exports.default = Thumb;
+    exports.default = {
+        Thumb: Thumb
+
+        // 实例化
+        // let run= new Thumb(0,$('#thumb'));
+        // run.clickAction();
+
+    };
 });

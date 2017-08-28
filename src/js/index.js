@@ -1,36 +1,39 @@
 class PraiseButton {
-    constructor() {
-        this.showPraiseText = this.showPraiseText.bind(this)
-        this.praiseText = null;
-        this.praiseHand = null;
-        this.count = 0;
+    constructor(num, element) {
+        this.num = num;
+        this.element = element;
+
     }
-    drawPraiseText() {
-        this.praiseHand = document.getElementById('hand');
-        this.praiseText = document.getElementById('praise-text');
-        this.praiseText.innerText = '+1';
-        this.praiseHand.onclick = this.showPraiseText;
-        this.count++;
+
+    clickAction() {
+        this.element.click(() => {
+            if (this.num < 10) {
+                this.element.css('-webkit-filter', 'grayscale(0)');
+                $('#animation').addClass('num');
+                this.num++
+                    setTimeout(function() {
+                        $('#animation').removeClass('num');
+                    }, 1000);
+            } else {
+                this.element.css('-webkit-filter', 'grayscale(1)');
+                this.num = 0;
+            }
+            console.log(this.num);
+        })
     }
 }
 
-export default class Thumb extends PraiseButton {
-    showPraiseText() {
-        this.drawPraiseText();
-        this.praiseText.classList.add("text-show");
-        if (this.count === 11) {
-            let handDiv = document.getElementById('hand');
-            handDiv.style.backgroundColor = "#c7c4c4";
-        }
-        setTimeout(() => {
-            this.hidePraiseText()
-        }, 500);
-    }
 
-    hidePraiseText() {
-        this.praiseText.classList.remove("text-show");
+class Thumb extends PraiseButton {
+    constructor(num, element) {
+        super(num, element);
     }
 }
+export
+default {
+    Thumb
+}
 
-// let run = new Thumb()
-// run.showPraiseText();
+// 实例化
+// let run= new Thumb(0,$('#thumb'));
+// run.clickAction();
