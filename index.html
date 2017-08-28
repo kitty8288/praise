@@ -22,10 +22,10 @@
 
     <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/systemjs/0.20.18/system.js"></script>
-    <!-- <script src="./dist/thumb.js"></script> -->
+    <!-- <script src="./dist/thumb-es5.js"></script> -->
     <script>
         $(function() {
-            SystemJS.import('./dist/index.js').then(function(m) {
+            SystemJS.import('./dist/index-es5.js').then(function(m) {
                 // console.log(new m.default);
                 $.extend({
                     thumb: m.default.Thumb

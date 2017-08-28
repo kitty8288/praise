@@ -17,7 +17,8 @@ npm install
 ## 编译
 #### babel编译es6代码
 ```shell
-npm run build
+babel src/js/index.js -o dist/index-es5.js
+babel src/js/thumb.js -o dist/thumb-es5.js
 ```
 ## 启动
 #### 本人是在XAMPP环境下运行的
