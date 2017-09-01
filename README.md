@@ -7,6 +7,31 @@
 - 实现Selenium-webdriver的e2e功能测试
 - 实现Karma完成点赞+1组件的单元测试
 
+## 目录结构
+```shell
+├── LICENSE
+├── README.md
+├── dist
+├── e2e.js
+├── geckodriver
+├── index.html
+├── karma.conf.js
+├── package-lock.json
+├── package.json
+├── src
+│   ├── css
+│   │   └── main.css
+│   └── js
+│       ├── index.js
+│       └── thumb.js
+├── test
+│   ├── test.js
+│   └── test.spec.js
+└── tree.js
+
+5 directories, 14 files
+```
+
 ## 下载
 #### 下载当前项目
 ```shell

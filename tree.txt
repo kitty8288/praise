@@ -1,0 +1,22 @@
+.
+├── LICENSE
+├── README.md
+├── dist
+├── e2e.js
+├── geckodriver
+├── index.html
+├── karma.conf.js
+├── package-lock.json
+├── package.json
+├── src
+│   ├── css
+│   │   └── main.css
+│   └── js
+│       ├── index.js
+│       └── thumb.js
+├── test
+│   ├── test.js
+│   └── test.spec.js
+└── tree.js
+
+5 directories, 14 files
