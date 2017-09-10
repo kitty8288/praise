@@ -58,7 +58,7 @@ localhost:8080/praise/
 ```
 
 ## 功能测试
-#### 使用的是 [selenium-webdriver](https://www.npmjs.com/package/selenium-webdriver)，在firefox上的测试
+#### 使用的是 [selenium-webdriver](https://www.npmjs.com/package/selenium-webdriver)，安装[浏览器启动程序](https://github.com/mozilla/geckodriver/releases/)这里选择的是Firefox启动程序geckodriver macos v0.18.0版本,下载解压后和测试文件e2e.js放在一个目录下，开始测试
 ```shell
 node e2e.js
 ```
