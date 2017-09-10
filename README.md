@@ -58,7 +58,7 @@ localhost:8080/praise/
 ```
 
 ## 功能测试
-#### 使用的是 selenium-webdriver，在firefox上的测试
+#### 使用的是 [selenium-webdriver](https://www.npmjs.com/package/selenium-webdriver)，在firefox上的测试
 ```shell
 node e2e.js
 ```
