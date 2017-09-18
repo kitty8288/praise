@@ -66,5 +66,8 @@ node e2e.js
 ## 单元测试
 #### 使用karma进行简单的单元测试
 ```shell
+karma init(默认选项)
+```
+```shell
 karma start
 ```
